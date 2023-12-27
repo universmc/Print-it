@@ -139,7 +139,12 @@ header {
 	position: absolute;
 	right: 10px;
 }
-
+button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
 
 
 

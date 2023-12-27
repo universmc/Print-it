@@ -14,7 +14,7 @@ const slides = [
 	{
 		"image":"slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
-	}
+	},
 ]
 
 
@@ -27,3 +27,15 @@ const slides = [
  bouton2.addEventListener("click", () => {
 	console.log("click OK button slide droit")
  })
+
+
+
+// bullet point 
+let numberOfSlides = slides.length;
+
+ const dotsContainer = document.querySelector('.dots');
+for (let i = 0; i < numberOfSlides; i++) { // boucle for pour compté le nombre d'image
+    const dot = document.createElement('div');
+    dot.className = 'dot';
+    dotsContainer.appendChild(dot);
+}
