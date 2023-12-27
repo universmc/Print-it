@@ -30,12 +30,16 @@ const slides = [
 
 
 
-// bullet point 
+// Créez les bullet points (dots) en fonction du nombre de slides
 let numberOfSlides = slides.length;
-
- const dotsContainer = document.querySelector('.dots');
-for (let i = 0; i < numberOfSlides; i++) { // boucle for pour compté le nombre d'image
+const dotsContainer = document.querySelector('.dots');
+for (let i = 0; i < numberOfSlides; i++) {
     const dot = document.createElement('div');
     dot.className = 'dot';
     dotsContainer.appendChild(dot);
 }
+
+// Marquez le premier bullet point comme actif
+dotsContainer.firstChild.classList.add('dot_selected');
+
+
