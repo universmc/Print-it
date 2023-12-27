@@ -56,3 +56,4 @@ Maîtriser les bases du JavaScript pour rendre le site de Print it plus interact
 ## Ressources et Documentation
 - [MDN Web Docs - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [OpenClassrooms - Cours JavaScript](https://openclassrooms.com/fr/courses/2984401-apprenez-a-coder-avec-javascript)
+- [Github page - preview](https://universmc.github.io/print-it/)
