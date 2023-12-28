@@ -149,6 +149,10 @@ button {
 
 
 /* Gestion des points du carrousel */
+.dotsContainer {
+	display: flex;
+  	justify-content: center;
+}
 .dots {
 	position: absolute;
 	bottom: 40px;
