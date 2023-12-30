@@ -49,14 +49,23 @@ let currentIndex = 0; // Index de l'image actuelle
 
 // Fonction pour aller à la slide suivante
 function goToNextSlide() {
-    currentIndex = (currentIndex + 1) % numberOfSlides; // Incrémente currentIndex, en bouclant si nécessaire
-    updateCarousel(); // Met à jour le carrousel
+    if (currentIndex === numberOfSlides - 1) {
+        currentIndex = 0; // Revenir au début si c'est la dernière slide
+    } else {
+        currentIndex++;
+    }
+    updateCarousel();
 }
+
 
 // Fonction pour aller à la slide précédente
 function goToPrevSlide() {
-    currentIndex = (currentIndex - 1 + numberOfSlides) % numberOfSlides; // Décrémente currentIndex, en bouclant si nécessaire
-    updateCarousel(); // Met à jour le carrousel
+    if (currentIndex === 0) {
+        currentIndex = numberOfSlides - 1; // Passer à la dernière slide si c'est la première
+    } else {
+        currentIndex--;
+    }
+    updateCarousel();
 }
 // Fonction pour mettre à jour les bullet points
 function updateDots() {
