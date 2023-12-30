@@ -43,11 +43,10 @@ for (let i = 0; i < numberOfSlides; i++) {
 dotsContainer.firstChild.classList.add('dot_selected');
 
 
-/* click arrow */ 
+/*  STEP 3 click SLIDERS UPDATE  */ 
 
 let currentIndex = 0; // Index de l'image actuelle
 
-// Fonction pour mettre à jour le carrousel
 // Fonction pour aller à la slide suivante
 function goToNextSlide() {
     currentIndex = (currentIndex + 1) % numberOfSlides; // Incrémente currentIndex, en bouclant si nécessaire
@@ -59,28 +58,24 @@ function goToPrevSlide() {
     currentIndex = (currentIndex - 1 + numberOfSlides) % numberOfSlides; // Décrémente currentIndex, en bouclant si nécessaire
     updateCarousel(); // Met à jour le carrousel
 }
+// Fonction pour mettre à jour les bullet points
+function updateDots() {
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach(dot => {
+        dot.classList.remove('dot_selected');
+    });
+    dots[currentIndex].classList.add('dot_selected');
+}
 
 // Fonction pour mettre à jour le carrousel
 function updateCarousel() {
-    // Mettre à jour l'image et le texte
     const bannerImg = document.querySelector('.banner-img');
     bannerImg.src = './assets/images/slideshow/' + slides[currentIndex].image;
     const taglineDiv = document.querySelector('.arrow-content p');
     taglineDiv.innerHTML = slides[currentIndex].tagLine;
 
-    // Mettre à jour les bullet points
-	function updateDots() {
-		const dots = document.querySelectorAll('.dot');
-		dots.forEach((dot, index) => {
-			dot.classList.remove('dot_selected'); // Retirer la classe 'dot_selected'
-			if (index === currentIndex) {
-				dot.classList.add('dot_selected'); // Ajouter 'dot_selected' au bullet point actif
-			}
-		});
-	}
-	
+    updateDots(); // Mettre à jour les bullet points
 }
 
-// Ajout des event listeners sur les boutons
-bouton1.addEventListener("click", goToPrevSlide); // Écouteur d'événement pour le bouton gauche
-bouton2.addEventListener("click", goToNextSlide); // Écouteur d'événement pour le bouton droit
+bouton1.addEventListener("click", goToPrevSlide);
+bouton2.addEventListener("click", goToNextSlide);
