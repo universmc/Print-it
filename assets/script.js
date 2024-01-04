@@ -16,6 +16,7 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	},
 ];
+
 /* ADD eventListener */
 
  let bouton1 = document.getElementById("bouton1");
@@ -41,6 +42,11 @@ for (let i = 0; i < numberOfSlides; i++) {
 
 // Marquez le premier bullet point comme actif
 dotsContainer.firstChild.classList.add('dot_selected');
+
+
+
+
+
 
 
 /*  STEP 3 click SLIDERS UPDATE  */ 
@@ -76,6 +82,8 @@ function updateDots() {
     dots[currentIndex].classList.add('dot_selected');
 }
 
+ 
+
 // Fonction pour mettre à jour le carrousel
 function updateCarousel() {
     const bannerImg = document.querySelector('.banner-img');
@@ -88,3 +96,25 @@ function updateCarousel() {
 
 bouton1.addEventListener("click", goToPrevSlide);
 bouton2.addEventListener("click", goToNextSlide);
+
+
+// condition de bord
+
+function goToNextSlide() {
+    if (currentIndex === numberOfSlides - 1) {
+        currentIndex = 0; // Revenir au début si c'est la dernière slide
+    } else {
+        currentIndex++;
+    }
+    updateCarousel();
+}
+
+
+// Fonction pour aller à la slide précédente
+function goToPrevSlide() {
+    if (currentIndex === 0) {
+        currentIndex = numberOfSlides - 1; // Passer à la dernière slide si c'est la première
+    } else {
+        currentIndex--;
+    }
+    updateCarousel()};
